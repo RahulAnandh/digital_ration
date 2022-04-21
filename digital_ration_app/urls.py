@@ -1,0 +1,31 @@
+from django.urls import path
+from digital_ration_app import views
+
+urlpatterns = [
+    path('',views.indexpage),
+    path('index/',views.indexpage),
+    path('login/',views.loginuser),
+    path('userregistration/',views.userregistration),
+    path('userlist/',views.userlist),
+    path('events/',views.eventpage),
+    path('about/',views.aboutpage),
+    path('products/',views.productpage),
+    path('services/',views.servicespage),
+    path('mail/',views.mailpage),
+    path('household/',views.householdpage),
+    path('vegetables/',views.vegetablespage),
+    path('kitchen/',views.kitchenpage),
+    path('subscribe/',views.subscribe),
+    path('single/',views.singleproduct),
+    path('productlist/',views.productlist),
+    path('addproduct/',views.addproduct),
+    path('adminlogin/',views.adminlogin),
+    path('userlist/',views.userlist),
+    path('verifieduserlist/',views.verifieduserlist),
+    path('nonverifieduserlist/',views.nonverifieduserlist),
+    path('editproduct/',views.editproduct),
+    path('checkout/',views.checkout),
+    path('userverification/',views.userverification),
+    path('issuecard/',views.issuecard),
+    path('changepassword/',views.changepassword),
+    ]
