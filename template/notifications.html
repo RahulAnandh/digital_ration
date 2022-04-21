@@ -1,7 +1,5 @@
 {% extends "adminheaderfooter.html" %}
 {% block content %}
-
-
 <div class="w3l_banner_nav_right">
     <!-- Profile Card -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -10,44 +8,20 @@
     <link href="/static/css/card.css" rel="stylesheet" type="text/css" media="all" /> 
     
     <!------ Include the above in your HEAD tag ---------->
-    {% for x in productdata %}
+    {% for x in notifications %}
     <!-- <img src="{{x.image.url}}" alt="text" height="200px" width="200px"> -->
-    <div class="container emp-profile">
-        <form method="post">
+    <div class="container emp-profile" height="20%">
+        <!-- <form method="post">
+            {% csrf_token %} -->
             <div class="row">
-                <div class="col-md-4">
-                    <div class="profile-img">
-                        <img src="/media/{{x.image}}" alt=""/>
-                        <div class="file btn btn-lg btn-primary">
-                            Change Photo
-                            <input type="file" name="file"/>
-                        </div>
-                    </div>
+                <div class="col-md-3">
+                    {{x.notificationtype}}
                 </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                                <h6>
-                                    Product Id : {{x.id}}
-                                </h6>
-                                <h6>
-                                    Product Name :{{x.name}}
-                                </h6>
-                                <h6>
-                                    Price :{{x.price}}
-                                </h6>
-                                <h6>
-                                  Month :{{x.month}}
-                              </h6>
-                              <h6>
-                                Discription :{{x.discription}}
-                              </h6>
-                              <h6>
-                                Status :{{x.Verified}}
-                              </h6>
-                    </div>
+                <div class="col-md-7">
+                    {{x.message}}
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Product"/>
+                    <a href="/notificationdelete/?nid={{x.id}}"><button class="profile-edit-btn">Close</button></a>
                 </div>
             </div>
             <div class="row">
@@ -77,7 +51,7 @@
                     </div>
                 </div>
             </div>
-        </form>           
+        <!-- </form>            -->
     </div>
     {% endfor %}
     </body>
@@ -119,5 +93,4 @@
             </div>
         </div>
     <!-- //newsletter-top-serv-btm -->
-<!-- //newsletter-top-serv-btm -->
 {% endblock %}

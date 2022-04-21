@@ -52,30 +52,84 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<input type="submit" value=" ">
 			</form>
 		</div>
-		<div class="product_list_header">  
-			<form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="View your cart" class="button" />
-                </fieldset>
-            </form>
-		</div>
+
+
 		<div class="w3l_header_right">
 			<ul>
 				<li class="dropdown profile_details_drop">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span class="caret"></span>User</a>
 					<div class="mega-dropdown-menu">
 						<div class="w3ls_vegetables">
 							<ul class="dropdown-menu drp-mnu">
 								<li><a href="/login/">Login</a></li> 
-								<li><a href="/userregistration/">Sign Up</a></li>
 							</ul>
 						</div>                  
 					</div>	
 				</li>
 			</ul>
 		</div>
+		
+		<!-- Modal start -->
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+	<i class="fa fa-shopping-cart" style="font-size:20px"></i>Products in Kart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Products in Kart</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		  <!-- Modal -->
+		  <div class="modal fade bd-example-modal-sm" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Products in the Kart</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+					{% if kartdata %}
+					{% for x in kartdata %}
+							<!-- modal body content -->
+							<div class="card" style="width:98%;">
+							<ul class="list-group list-group-flush">
+						  	<li class="list-group-item">Cras justo odio</li>
+						</ul>
+					  </div>
+					<!-- modal body content end -->
+					{% endfor %}
+					{% endif %}
+				
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	  <button type="button" class="btn btn-primary">Save changes</button>
+	</div>
+  </div>
+</div>
+</div>
+		  <!-- Modal end -->
+			
+
+
+
 		<div class="w3l_header_right1">
 			<h2><a href="/adminlogin/">Admin</a></h2>
 		</div>
@@ -136,54 +190,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
-						<li><a href="/products/">Branded Foods</a></li>
-						<li><a href="/household/">Households</a></li>
-						<li class="dropdown mega-dropdown active">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>				
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>	
-										<li><a href="/vegetables/">Vegetables</a></li>
-										<li><a href="/vegetables/">Fruits</a></li>
-									</ul>
-								</div>                  
-							</div>				
-						</li>
-						<li><a href="/kitchen/">Kitchen</a></li>
-						<li><a href="/short-codes/">Short Codes</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="drinks.html">Soft Drinks</a></li>
-										<li><a href="drinks.html">Juices</a></li>
-									</ul>
-								</div>                  
-							</div>	
-						</li>
-						<li><a href="/pet/">Pet Food</a></li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Frozen Foods<span class="caret"></span></a>
-							<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="/frozen/">Frozen Snacks</a></li>
-										<li><a href="/frozen/">Frozen Nonveg</a></li>
-									</ul>
-								</div>                  
-							</div>	
-						</li>
-						<li><a href="/bread/">Bread & Bakery</a></li>
+						<li><a href="/january/">January</a></li>
+						<li><a href="/february/">February</a></li>
+                        <li><a href="/march/">March</a></li>
+                        <li><a href="/april/">April</a></li>
+                        <li><a href="/may/">May</a></li>
+                        <li><a href="/june/">June</a></li>
+                        <li><a href="/july/">July</a></li>
+                        <li><a href="/august/">August</a></li>
+                        <li><a href="/september/">September</a></li>
+                        <li><a href="/october/">October</a></li>
+                        <li><a href="/november/">November</a></li>
+                        <li><a href="/december/">December</a></li>	
 					</ul>
 				 </div><!-- /.navbar-collapse -->
 			</nav>
 		</div>
+		</div>
 		{% block content %}
-
-
 		{% endblock %}
-<!-- newsletter -->
 	<div class="newsletter">
 		<div class="container">
 			<div class="w3agile_newsletter_left">

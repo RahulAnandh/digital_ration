@@ -23,7 +23,7 @@ class Contact_tb(models.Model):
     subject = models.CharField(max_length=200,null='empty')
     message = models.CharField(max_length=300,null='empty')
 
-class Subscribe_tb(models.Model):
+class Subscribers_tb(models.Model):
     email = models.CharField(max_length=200,null='empty')
 
 class Product_tb(models.Model):
@@ -32,6 +32,19 @@ class Product_tb(models.Model):
     price = models.CharField(max_length=20,null='empty')
     quantity = models.CharField(max_length=20,null='empty')
     discription = models.CharField(max_length=300,null='empty')
+    month = models.CharField(max_length=20,null='empty')
+
+class  Notification_tb(models.Model):
+    notificationtype = models.CharField(max_length=30,null='empty')
+    date = models.CharField(max_length=20,null='empty')
+    message = models.CharField(max_length=20,null='empty')
+    read = models.BooleanField(default='False')
+
+class  Kart_tb(models.Model):
+    userid=models.ForeignKey(User_registration_tb,on_delete=models.CASCADE)
+    productid=models.ForeignKey(Product_tb,on_delete=models.CASCADE)
+    productcount = models.CharField(max_length=10)
+   
     
     
     

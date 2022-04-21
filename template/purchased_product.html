@@ -1,19 +1,19 @@
 {% extends "adminheaderfooter.html" %}
 {% block content %}
 
-
 <div class="w3l_banner_nav_right">
     <!-- Profile Card -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="/static/css/card.css" rel="stylesheet" type="text/css" media="all" /> 
-    
+    <div>THIS PAGE IS FOR  PURCHASED PRODUCT</div>
     <!------ Include the above in your HEAD tag ---------->
-    {% for x in productdata %}
+    {% for x in feedbackdata %}
     <!-- <img src="{{x.image.url}}" alt="text" height="200px" width="200px"> -->
     <div class="container emp-profile">
-        <form method="post">
+        <!-- <form method="post">
+            {% csrf_token %} -->
             <div class="row">
                 <div class="col-md-4">
                     <div class="profile-img">
@@ -27,27 +27,28 @@
                 <div class="col-md-6">
                     <div class="profile-head">
                                 <h6>
-                                    Product Id : {{x.id}}
+                                    User Id : {{x.id}}
                                 </h6>
                                 <h6>
-                                    Product Name :{{x.name}}
+                                    User :{{x.name}}
                                 </h6>
                                 <h6>
-                                    Price :{{x.price}}
+                                    E-Mail :{{x.email}}
                                 </h6>
                                 <h6>
-                                  Month :{{x.month}}
+                                  Aadhar No :{{x.aadharnumber}}
                               </h6>
                               <h6>
-                                Discription :{{x.discription}}
+                                Ration Card No :{{x.rationcardnumber}}
                               </h6>
                               <h6>
                                 Status :{{x.Verified}}
                               </h6>
+                       
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Product"/>
+                    <a href="/userverification/?uid={{x.id}}"><button class="profile-edit-btn">Verify User</button></a>
                 </div>
             </div>
             <div class="row">
@@ -77,7 +78,7 @@
                     </div>
                 </div>
             </div>
-        </form>           
+        <!-- </form>            -->
     </div>
     {% endfor %}
     </body>
@@ -118,6 +119,6 @@
                 <div class="clearfix"> </div>
             </div>
         </div>
-    <!-- //newsletter-top-serv-btm -->
-<!-- //newsletter-top-serv-btm -->
+
 {% endblock %}
+

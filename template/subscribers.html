@@ -1,0 +1,70 @@
+{% extends "adminheaderfooter.html" %}
+{% block content %}
+<div class="w3l_banner_nav_right">
+    <!-- Profile Card -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="/static/css/card.css" rel="stylesheet" type="text/css" media="all" /> 
+    
+    <!------ Include the above in your HEAD tag ---------->
+    {% for x in subscribers %}
+    <!-- <img src="{{x.image.url}}" alt="text" height="200px" width="200px"> -->
+    <div class="container emp-profile" height="20%">
+        <!-- <form method="post">
+            {% csrf_token %} -->
+            <div class="row">
+                <div class="col-md-3">
+                    Subscriber Id:{{x.id}}
+                </div>
+                <div class="col-md-7">
+                    Subscriber E-Mail   :{{x.email}}
+                </div>
+                <div class="col-md-2">
+                    <a href="/notificationdelete/?nid={{x.id}}"><button class="profile-edit-btn">Close</button></a>
+                </div>
+            </div>
+           
+        <!-- </form>            -->
+    </div>
+    {% endfor %}
+    </body>
+    
+    
+    <!-- //Profile Card -->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    <!-- //banner -->
+    <!-- newsletter-top-serv-btm -->
+        <div class="newsletter-top-serv-btm">
+            <div class="container">
+                <div class="col-md-4 wthree_news_top_serv_btm_grid">
+                    <div class="wthree_news_top_serv_btm_grid_icon">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </div>
+                    <h3>Nam libero tempore</h3>
+                    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
+                        saepe eveniet ut et voluptates repudiandae sint et.</p>
+                </div>
+                <div class="col-md-4 wthree_news_top_serv_btm_grid">
+                    <div class="wthree_news_top_serv_btm_grid_icon">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </div>
+                    <h3>officiis debitis aut rerum</h3>
+                    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
+                        saepe eveniet ut et voluptates repudiandae sint et.</p>
+                </div>
+                <div class="col-md-4 wthree_news_top_serv_btm_grid">
+                    <div class="wthree_news_top_serv_btm_grid_icon">
+                        <i class="fa fa-truck" aria-hidden="true"></i>
+                    </div>
+                    <h3>eveniet ut et voluptates</h3>
+                    <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus 
+                        saepe eveniet ut et voluptates repudiandae sint et.</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    <!-- //newsletter-top-serv-btm -->
+{% endblock %}
