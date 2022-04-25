@@ -5,6 +5,8 @@ import hashlib
 # from reportlab.pdfgen import canvas 
 from django.views.generic import View
 from datetime import date
+from django.core.mail import send_mail
+from django.conf import settings
 
 
 
@@ -191,6 +193,11 @@ def userregistration(request):
             notification.save()
             query=User_registration_tb(name=name,email=email,password=hashpassword,phone=phone,gender=gender,aadharnumber=aadharnumber,rationcardnumber=rationcardnumber,verified='False')
             query.save()
+            subject = 'welcome to Digital Ration.'
+            message = f'Hi {name}, thank you for registering in Digital Ration.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [email, ]
+            send_mail( subject, message, email_from, recipient_list )
             return render(request,'user_registration.html')
     else:
         return render(request,'user_registration.html')
@@ -217,7 +224,6 @@ def checkout(request):
     if request.session.has_key('userid'):
         if request.method == "POST":
             productid=request.POST['productid']
-            
             usersessionid=request.session['userid']
             pid=Product_tb.objects.get(id=productid)
             uid=User_registration_tb.objects.get(id=usersessionid)
@@ -411,8 +417,8 @@ def removeitem(request):
 def edititem(request):
     if request.session.has_key('userid'):
         kid=request.GET['kid']
-        sigleitem=Kart_tb.objects.filter(id=kid)
-        return render(request,'single.html',{'sigleitem':sigleitem})
+        singleitem=Kart_tb.objects.filter(id=kid)
+        return render(request,'single.html',{'singleitem':singleitem})
 
 def updatecount(request):
     if request.session.has_key('userid'):
